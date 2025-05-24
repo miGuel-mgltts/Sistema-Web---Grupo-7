@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Sistema Web</title>
+
+	<!-- Ícono -->
+	<link rel="icon" href="ico.png">
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="assets/css/principal.css">
+
+	<!-- Boxicons -->
+	<link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+	<!-- Header -->
+	<header>
+		<h1>Sistema de Inventario</h1>
+	</header>
+
+    <!-- Barra Lateral -->
+	<nav class="sidebar close">
+		<div class="top">
+			<i class="bx bx-chevron-right toggle"></i>
+		</div>
+
+		<div class="menu">
+			<ul class="menu-links">
+
+				<li class="nav-link">
+					<a href="#" data-section="productos">
+						<i class="bx bx-package icon"></i>
+						<span class="text">Productos</span>
+					</a>
+				</li>
+
+				<li class="nav-link">
+					<a href="#" data-section="Proveedores">
+						<i class="bx bx-store icon"></i>
+						<span class="text">Proveedores</span>
+					</a>
+				</li>
+
+				<li class="nav-link">
+					<a href="#" data-section="ventas">
+						<i class="bx bx-cart icon"></i>
+						<span class="text">Ventas</span>
+					</a>
+				</li>
+
+				<li class="nav-link">
+					<a href="#" data-section="devoluciones">
+						<i class="bx bx-undo icon"></i>
+						<span class="text">Devoluciones</span>
+					</a>
+				</li>
+			</ul>
+		</div>
+
+	</nav>
+
+	<!-- Contenido Principal -->
+	<main class="home" id="main-content">
+		<iframe id="content-frame" src="productos.html" frameborder="0"></iframe>
+	</main>
+
+	<script src="Assets/JS/principal.js"></script>
+
+	<!-- Script para cambiar las páginas en el iframe -->
+	<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const frame = document.getElementById('content-frame');
+        
+        // Cargar productos.html por defecto
+        frame.src = 'productos.html';
+        
+        document.querySelectorAll('.menu-links a').forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                const sectionKey = e.currentTarget.getAttribute('data-section');
+                frame.src = `${sectionKey}.html`;
+            });
+        });
+    });
+</script>
+</body>
+</html>

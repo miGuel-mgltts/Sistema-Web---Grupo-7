@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="assets/css/ventas.css">
+</head>
+
+<body>
+    <main class="container-main">
+        <section class="container-left">
+            <h1>FACTURACIÓN</h1>
+            <div id="form-ventas" class="form-registro">
+                <div class="grid-form">
+                    <form id="formulario">
+                        <div class="form-group">
+                            <label for="codigoVentas">Código:</label>
+                            <input type="number" id="codigoVentas" name="codigoVentas" class="input-codigo">
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="cliente">Cliente o corporación:</label>
+                                <input type="text" id="cliente" name="cliente">
+                            </div>
+                            <div class="form-group">
+                                <label for="ruc">Cédula o RUC:</label>
+                                <input type="number" id="ruc" name="ruc">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="direccion">Dirección:</label>
+                                <input type="text" id="direccion" name="direccion">
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Teléfono:</label>
+                                <input type="number" id="telefono" name="telefono">
+                            </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="form-group">
+                                <label for="codigoProd">Código de Producto:</label>
+                                <input type="number" id="codigoProd" name="codigoProd">
+                            </div>
+                            <div class="form-group">
+                                <label for="cantidad">Cantidad:</label>
+                                <input type="number" id="cantidad" name="cantidad">
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="fecha">Fecha de facturación:</label>
+                            <input type="date" id="fecha" name="fecha">
+                        </div>
+                    </form>
+                </div>
+                <div class="submit-row">
+                    <button class="btn" onclick="agregarFactura()">Registrar</button>
+                </div>
+            </div>
+        </section>
+        <section class="container-rigth">
+            <h1>REGISTROS DE VENTAS</h1>
+
+            <!-- FORMULARIO DE FILTROS -->
+
+            <form action="#" method="GET" class="form-filtro">
+
+                <div class="grid-form grid-form-tabla">
+                    <!-- FILA DE ETIQUETAS -->
+                    <label for="filtro_codigo" class="filtrar">Filtrar por Codigo:</label>
+
+                    <!-- FILA DE CAMPOS -->
+                    <input type="text" id="filtro_ventas" name="filtro_ventas" class="filtrar">
+                </div>
+
+                <div class="submit-row">
+                    <button class="btn btn-filtrar">Filtrar</button>
+                </div>
+
+            </form>
+            <!-- TABLA DE PRODUCTOS -->
+
+            <div class="container-tabla-ventas">
+                <table class="tabla-ventas" id="tabla-ventas">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>cliente</th>
+                            <th>Cedula o RUC</th>
+                            <th>Direccion</th>
+                            <th>Teléfono</th>
+                            <th>Código de Producto</th>
+                            <th>Cantidad</th>
+                            <th>Fecha de facturación</th>
+                            <th>Acciones</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>000001</td>
+                            <td>Juan Ordoñez</td>
+                            <td>0958964033</td>
+                            <td>Salida Maricarmen Gamboa 6 Esc. 976</td>
+                            <td>0928391203</td>
+                            <td>001</td>
+                            <td>2</td>
+                            <td>2025-22-05</td>
+                            <td>
+                                <button class="btn btn-editar">Editar</button>
+                                <button class="btn btn-eliminar"
+                                    onclick="return confirm('¿Estás seguro de eliminar esta factura?');">Eliminar</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+    <script src="assets/js/ventas.js"></script>
+</body>
+</html>

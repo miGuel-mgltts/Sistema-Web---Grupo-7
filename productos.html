@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Productos</title>
+    <link rel="stylesheet" type="text/css" href="assets/css/productos.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+</head>
+
+<body>
+    <!--CONTENEDOR-->
+    <main class="conteiner">
+
+        <section class="conteiner-left">
+
+            <h1>REGISTRO</h1>
+    
+            <div id="formProducto" class="form-registro">
+            
+                    <div class="grid-form">
+                        <!-- FILA DE ETIQUETAS -->
+                        <label for="codigo" class="col-span-2">Código</label>
+                        <label for="nombre" class="col-span-4">Nombre</label>
+            
+                        <!-- FILA DE CAMPOS -->
+                        <input type="text" id="codigo" name="codigo" required class="col-span-2">
+                        <input type="text" id="nombre" name="nombre" required class="col-span-4">
+                    </div>
+
+                    <div class="grid-form">
+                        <!-- FILA DE ETIQUETAS -->
+                        <label for="stock" class="col-span-2">Stock Inicial</label>
+                        <label for="categoria" class="col-span-4">Categoría</label>
+            
+                        <!-- FILA DE CAMPOS -->
+                        <input type="number" id="stock" name="stock" required class="col-span-2">
+                        <select id="categoria" name="categoria" class="col-span-4">
+                            <option value="electrónica">Electrónica</option>
+                            <option value="ropa">Ropa</option>
+                            <option value="alimentos">Alimentos</option>
+                            <option value="muebles">Muebles</option>
+                        </select>
+                    </div>
+
+                    <div class="grid-form">
+                        <!-- FILA DE ETIQUETAS -->
+                        <label for="precio_venta" class="col-span-3">Precio Venta</label>
+                        <label for="precio_compra"class="col-span-3">Precio Compra</label>
+            
+                        <!-- FILA DE CAMPOS -->
+                        <input type="number" id="precio_venta" name="precio_venta" step="0.01" required class="col-span-3">
+                        <input type="number" id="precio_compra" name="precio_compra" step="0.01" required class="col-span-3">
+                    </div>
+            
+                    <div class="submit-row">
+                        <button class="btn" onclick="agregarProducto()">Registrar</button>
+                    </div>
+                </div>
+
+        </section>
+
+        <section class="conteiner-right">
+
+            <h1>VER REGISTROS</h1>
+
+            <!-- FORMULARIO DE FILTROS -->
+
+            <form action="#" method="GET" class="form-filtro">
+
+                <div class="grid-form grid-form-tabla">
+                    <!-- FILA DE ETIQUETAS -->
+                     <label for="filtro_codigo" class="col-span-3">Filtrar por Codigo:</label>
+                     <label for="filtro_categoria" class="col-span-3">Filtrar por Categoría:</label>
+        
+                    <!-- FILA DE CAMPOS -->
+                    <input type="text" id="filtro_nombre" name="filtro_nombre" class="col-span-3">
+                    <select id="filtro_categoria" name="filtro_categoria" class="col-span-3">
+                        <option value="">Todas</option>
+                        <option value="electrónica">Electrónica</option>
+                        <option value="ropa">Ropa</option>
+                        <option value="alimentos">Alimentos</option>
+                        <option value="muebles">Muebles</option>
+                    </select>
+                </div>
+
+                <div class="submit-row">
+                    <button class="btn btn-filtrar">Filtrar</button>
+                </div>
+ 
+            </form>
+            <!-- TABLA DE PRODUCTOS -->
+
+            <table class="tabla-productos" id="tabla-productos">
+                <thead>
+                    <tr>
+                        <th>Código</th>
+                        <th>Nombre</th>
+                        <th>Categoría</th>
+                        <th>Precio de Venta</th>
+                        <th>Stock</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Aquí se mostrarían los productos filtrados de la base de datos -->
+                    <tr>
+                        <td>Producto 1</td>
+                        <td>001</td>
+                        <td>Electrónica</td>
+                        <td>$100.00</td>
+                        <td>20</td>
+                        <td>
+                            <button class="btn btn-editar">Editar</button>
+                            <button class="btn btn-eliminar" onclick="return confirm('¿Estás seguro de eliminar este producto?');">Eliminar</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+            
+        </section>
+
+    </main>
+
+    <!-- SCRIPT -->
+    <script src="assets/JS/productos.js"></script>
+</body>
+</html>
